@@ -2,6 +2,7 @@ import SwiftUI
 
 public let flowLayoutDefaultItemSpacing: CGFloat = 4
 
+@available(iOS 15.0, *)
 public struct FlowLayout<RefreshBinding, Data, ItemView: View>: View {
   let mode: Mode
   @Binding var binding: RefreshBinding
@@ -84,6 +85,7 @@ private struct HeightPreferenceKey: PreferenceKey {
   static var defaultValue: CGFloat = 0
 }
 
+@available(iOS 15.0, *)
 private struct HeightReaderView: View {
   @Binding var binding: CGFloat
   var body: some View {
@@ -97,7 +99,7 @@ private struct HeightReaderView: View {
   }
 }
 
-
+@available(iOS 15.0, *)
 public extension FlowLayout where RefreshBinding == Never? {
     init(mode: Mode,
          items: [Data],
@@ -111,6 +113,7 @@ public extension FlowLayout where RefreshBinding == Never? {
     }
 }
 
+@available(iOS 15.0, *)
 struct FlowLayout_Previews: PreviewProvider {
   static var previews: some View {
     FlowLayout(mode: .scrollable,
@@ -128,6 +131,7 @@ struct FlowLayout_Previews: PreviewProvider {
   }
 }
 
+@available(iOS 15.0, *)
 struct TestWithDeletion: View {
     @State private var items = ["Some long item here", "And then some longer one",
                                 "Short", "Items", "Here", "And", "A", "Few", "More",
@@ -160,6 +164,7 @@ struct TestWithDeletion: View {
     }
 }
 
+@available(iOS 15.0, *)
 struct TestWithDeletion_Previews: PreviewProvider {
   static var previews: some View {
     TestWithDeletion()
